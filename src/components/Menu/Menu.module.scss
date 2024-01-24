@@ -1,0 +1,14 @@
+.menu {
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: var(--header-navbar-padding-top-bottom) 16px;
+    position: relative;
+}
