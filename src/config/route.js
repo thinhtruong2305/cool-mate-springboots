@@ -1,12 +1,18 @@
 const routes = {
     home: '/',
     shop: '/shop',
-    detail: '/detail',
-    account: '/account',
-    admin: '/admin',
-    upload: '/upload',
-    search: '/search',
-    live: '/live',
+    detailProduct: '/detail-product',
+    category: '/category',
+    login: '/login',
+    register: '/register',
 };
 
-export default routes;
+const clientRoutes = {};
+
+const adminRoutes = {
+    admin: '/admin',
+    product: '/admin/product',
+    category: '/admin/category',
+};
+
+export { routes, adminRoutes };

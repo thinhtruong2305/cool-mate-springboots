@@ -7,46 +7,39 @@ import SubMenu from './SubMenu';
 const cx = classNames.bind(styles);
 
 function Menu({ items = [] }) {
-    const highMenu = items.filter((item) => !item.parentId);
-    const subMenu = items.filter((item) => item.parentId);
-    const [menu, setMenu] = useState(highMenu.concat(subMenu));
+    const [menu, setMenu] = useState(items);
 
     //3. Trong từng cấp menu, lọc ra những menu con có "parent" trùng với "id" của menu cha
     menu.forEach((menuItem) => {
         menuItem.children = items.filter((item) => item.parentId === menuItem.id);
-        if (menuItem.parentId > 0 && (menuItem.children.length === 0 || menuItem.children.length > 0)) {
+        if (menuItem.parentId > 0 && menuItem.children !== undefined) {
             const newMenu = menu.filter((item) => item.id !== menuItem.id);
             setMenu(newMenu);
         }
     });
     return (
         <ul className={cx('menu')}>
-            {Object.keys(menu).map((index) => {
-                return menu[index].parentId !== undefined ? (
-                    <li key={Math.round(index + Math.random() * 10000)}>
-                        <MenuItem item={menu[index]}></MenuItem>
-                        {menu[index].children !== undefined ? (
+            {Object.keys(menu).map((i) => {
+                return menu[i].parentId !== undefined ? (
+                    <li key={Math.round(i + Math.random() * 10000)}>
+                        <MenuItem item={menu[i]}></MenuItem>
+                        <SubMenu key={i} items={menu[i].children}></SubMenu>
+                        {/* {menu[i].children !== undefined ? (
                             <>
-                                {Object.keys(menu[index].children).map((index) => {
-                                    return menu[index].children[index] !== undefined ? (
-                                        <>
-                                            <SubMenu
-                                                items={menu[index].children}
-                                                subMenu={menu[index].children[index].children}
-                                            ></SubMenu>
-                                        </>
-                                    ) : (
-                                        <SubMenu items={menu[index].children}></SubMenu>
-                                    );
+                                {Object.keys(menu[i].children).map((j) => {
+                                    if (menu[i].id === menu[i].children[j].parentId) {
+                                        return <SubMenu key={j} items={menu[i].children}></SubMenu>;
+                                    }
+                                    return <></>;
                                 })}
                             </>
                         ) : (
                             <></>
-                        )}
+                        )} */}
                     </li>
                 ) : (
-                    <li key={Math.round(index + Math.random() * 10000)}>
-                        <MenuItem item={menu[index]}></MenuItem>
+                    <li key={Math.round(i + Math.random() * 10000)}>
+                        <MenuItem item={menu[i]}></MenuItem>
                     </li>
                 );
             })}

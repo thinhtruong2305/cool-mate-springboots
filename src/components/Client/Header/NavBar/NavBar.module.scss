@@ -1,5 +1,7 @@
+@import '../../../Modal/Modal.module.scss';
+
 .nav-bar-wrapper {
-    background-color: #212121;
+    background-color: var(--black);
     transition: all 0.3s;
     position: relative;
 }
@@ -24,8 +26,9 @@
 }
 
 .nav-bar-logo {
-    padding-top: var(--header-navbar-padding-top-bottom);
-    padding-bottom: var(--header-navbar-padding-top-bottom);
+    padding-top: 31px;
+    padding-bottom: 31px;
+    padding-right: 5px;
 }
 
 .nav-bar-menu {
@@ -38,16 +41,111 @@
     padding-right: 15px;
 }
 
-.nav-bar-menu ul li a {
+.nav-bar-menu ul li {
     font-weight: var(--font-weight-medium);
     text-transform: uppercase;
     white-space: nowrap;
-    color: #fff;
+    color: var(--white);
     position: relative;
     font-size: 14px;
+}
+
+.nav-bar-menu ul li:hover {
+    background: var(--selected);
+}
+
+.nav-bar-menu li ul {
+    display: none;
+    min-width: 350px;
+    position: absolute;
+    z-index: 9999;
+}
+
+.nav-bar-menu li > ul li {
+    padding: 10px;
+    width: 80%;
+    border: none;
+    background: var(--black);
+    text-align: left;
+}
+
+/*khi hover thì hiện menu câp 2*/
+.nav-bar-menu li:hover > ul {
+    display: block;
+}
+
+/*Hiển thị menu con cấp 2 bên cạnh phải*/
+.nav-bar-menu > ul li > ul {
+    margin-left: 200px;
+    margin-top: 193px;
+}
+
+.nav-bar-menu > ul li > ul li > ul {
+    margin-left: 574px;
+    margin-top: 1px;
 }
 
 .nav-bar-action {
     display: flex;
     align-content: center;
+}
+
+.search {
+    background-color: white;
+    height: 50px;
+    display: flex;
+    align-self: center;
+    align-items: center;
+    border-radius: 92px;
+    input {
+        font-size: 1.6rem;
+        height: 100%;
+        border: none;
+        outline: none;
+        background: transparent;
+    }
+    button {
+        padding: 0px 15px;
+        font-size: 20px;
+        border: none;
+        outline: none;
+        background: transparent;
+    }
+}
+
+.action {
+    display: flex;
+    align-self: center;
+    align-items: center;
+    a {
+        padding: 0px 10px;
+    }
+}
+
+.action button {
+    padding: 0px 20px;
+    border: none;
+    background-color: transparent;
+}
+
+.action button img {
+    width: 30px;
+    height: 30px;
+}
+
+.cart-count {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+    position: absolute;
+    right: 43px;
+    bottom: 52px;
+    width: 15px;
+    height: 15px;
+    background-color: #f9f86c;
+    color: #000;
+    font-size: 10px;
+    font-weight: 700;
+    pointer-events: none;
 }

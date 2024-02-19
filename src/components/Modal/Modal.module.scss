@@ -1,0 +1,71 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1040;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.5;
+}
+
+.modal-wrapper {
+    position: fixed;
+    top: 35px;
+    left: 125px;
+    z-index: 1050;
+    width: 80%;
+    height: 90%;
+    outline: 0;
+    background-color: var(--white);
+}
+
+.modal-inner {
+    z-index: 2000;
+    padding: 25px;
+    width: fit-content;
+    height: fit-content;
+    outline: 0;
+}
+
+.modal {
+    z-index: 100;
+    background-color: var(--white);
+    position: relative;
+    margin: 5px auto;
+    overflow-y: scroll;
+    border-radius: 3px;
+    max-width: var(--medium-width-modal);
+    max-height: var(--medium-height-modal);
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+        margin: 50px;
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        -webkit-border-radius: 10px;
+        border-radius: 10px;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        -webkit-border-radius: 10px;
+        border-radius: 10px;
+        background: rgba(108, 211, 240, 0.3);
+    }
+    &::-webkit-scrollbar-thumb:window-inactive {
+        background-color: rgba(0, 89, 255, 0.3);
+    }
+}
+
+.modal-close-button {
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    opacity: 0.3;
+    cursor: pointer;
+    border: none;
+}

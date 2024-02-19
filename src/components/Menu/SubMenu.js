@@ -1,15 +1,23 @@
 import MenuItem from './MenuItem';
 
-function SubMenu({ items = [], subMenu = [] }) {
+function SubMenu({ items = [] }) {
     return (
         <ul>
-            {Object.keys(items).map((index) => {
-                return (
-                    <li key={Math.round(index + Math.random() * 10000)}>
-                        <MenuItem item={items[index]}></MenuItem>
-                        {subMenu.length > 0 ? <SubMenu items={subMenu} subMenu={subMenu.children}></SubMenu> : <></>}
-                    </li>
-                );
+            {Object.keys(items).map((i) => {
+                if (items[i].children !== undefined || items[i].children !== null) {
+                    return (
+                        <li key={i}>
+                            <MenuItem item={items[i]}></MenuItem>
+                            <SubMenu items={items[i].children}></SubMenu>
+                        </li>
+                    );
+                } else {
+                    return (
+                        <li key={i}>
+                            <MenuItem item={items[i]}></MenuItem>
+                        </li>
+                    );
+                }
             })}
         </ul>
     );

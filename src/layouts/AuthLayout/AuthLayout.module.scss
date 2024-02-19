@@ -1,0 +1,121 @@
+@import '../../components/Modal/Modal.module.scss';
+
+.column {
+    display: flex;
+    align-self: center;
+}
+
+.column img {
+    width: 70%;
+    height: max-content;
+}
+
+.login-heading {
+    margin-bottom: 20px;
+}
+
+.login-heading div {
+    margin-bottom: 20px;
+}
+
+.title {
+    font-size: 50px;
+    font-weight: var(--font-weight-bold);
+    line-height: 1.125;
+}
+
+.subtitle {
+    font-family: Pangea, sans-serif;
+    font-size: 14px;
+    font-weight: var(--font-weight-normal);
+    line-height: 1.5;
+    color: #231f20;
+}
+
+.login-third-party {
+    margin: 20px 0px;
+}
+
+.login-provider {
+    margin: 0px 5px;
+    border: 1px solid #ccc;
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 0.25rem;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.login-provider-icon {
+    display: inline-block;
+}
+
+.login-provider-icon img {
+    height: 30px;
+    width: 30px;
+    object-fit: contain;
+}
+
+.login-or-provider {
+    margin: 10px 0px;
+    text-indent: 50px;
+}
+
+.auth-action {
+    display: flex;
+    justify-content: space-between;
+    color: var(--blue);
+}
+
+.textbox-client {
+    padding: 10px;
+    margin: 10px 0px;
+    width: 100%;
+    max-width: 100%;
+    font-size: 20px;
+    border: 2px solid #dadada;
+    border-radius: 92px;
+    &:focus {
+        outline-width: 0;
+        border: 1px solid var(--blue) !important;
+    }
+}
+
+.btn-login-client {
+    margin: 20px 0px;
+    padding: 10px;
+    font-size: 23px;
+    font-weight: var(--font-weight-normal);
+    border-radius: 92px;
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.modal-wrapper {
+    border-radius: 20px;
+}
+
+.modal {
+    padding: 30px !important;
+    border-radius: 20px !important;
+}
+
+.modal-close-button {
+    display: block;
+    position: fixed;
+    top: 20px;
+    right: 125px;
+    padding: 10px;
+    border-radius: 100%;
+    opacity: 1 !important;
+    color: var(--white) !important;
+    background-color: var(--black) !important;
+    cursor: pointer;
+    border: solid 1px var(--white) !important;
+    span {
+        font-size: 35px;
+        padding: 10px;
+    }
+}

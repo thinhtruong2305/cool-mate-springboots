@@ -1,7 +1,8 @@
-import routes from './route';
+import { routes, adminRoutes } from './route';
 
 const config = {
     routes,
+    adminRoutes,
 };
 
 export default config;

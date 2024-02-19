@@ -1,0 +1,21 @@
+.header-wrapper {
+    z-index: 50;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--white);
+    width: 100%;
+}
+
+.header-show {
+    position: fixed;
+    visibility: visible;
+    transition: all 0.5s;
+}
+
+.header-hidden {
+    visibility: hidden;
+    transition: all 0.5s;
+    transform: translateY(-100%);
+}

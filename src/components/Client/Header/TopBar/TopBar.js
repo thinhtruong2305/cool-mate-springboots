@@ -1,22 +1,27 @@
 import classNames from 'classnames/bind';
 import styles from './TopBar.module.scss';
 import Menu from '~/components/Menu';
+import { logoCoolmateTopbar, logoCM24, logo84Rising, logoCoolXPrint } from '~/assets';
 const cx = classNames.bind(styles);
 const brands = [
     {
         href: '/',
-        imgPath: 'https://static.coolmate.me/images/logo-coolmate-v2.svg',
+        imgPath: { logoCoolmateTopbar },
         alt: 'logo-coolmate',
     },
-    { href: '/', imgPath: 'https://static.coolmate.me/images/logo-cm24-own-new.svg', alt: 'logo-cm24' },
     {
         href: '/',
-        imgPath: 'https://static.coolmate.me/images/logo-84rising-own.svg',
+        imgPath: { logoCM24 },
+        alt: 'logo-cm24',
+    },
+    {
+        href: '/',
+        imgPath: { logo84Rising },
         alt: 'logo-84-rising',
     },
     {
         href: '/',
-        imgPath: 'https://static.coolmate.me/images/logo-coolxprint.svg',
+        imgPath: { logoCoolXPrint },
         alt: 'logo-coolxprint',
     },
 ];
